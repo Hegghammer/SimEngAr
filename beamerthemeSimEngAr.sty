@@ -1,0 +1,76 @@
+%===================================
+% Simple English Arabic Beamer theme 
+%
+% Inspired by: 
+% - http://svmiller.com/blog/2019/08/r-markdown-template-beamer-presentations/
+% - https://rasrita.wordpress.com/2017/11/02/rmarkdown-template-for-beamer-presentation/
+% .. and countless StackOverFlow and StackExchange posts. 
+%
+% Thomas Hegghammer, 29 March 2022
+%===================================
+
+% Packages (must load in this order for code chunks to work with Arabic)
+\usepackage{framed} 
+\usepackage{fancyvrb} 
+\usepackage[utf]{arabxetex}
+
+% Font families
+\newfontfamily\arabicfont[Script=Arabic,Scale=1.5]{Scheherazade} % Amiri or Noto Sans Arabic also work here.
+% English font defaults to Computer Modern. Uncomment one of the below for something different:
+%\usepackage{helvet}
+%\usepackage{arev}
+%\usepackage{cmbright}
+
+% Custom colors
+\definecolor{softwhite}{HTML}{FBFBFB}
+\definecolor{olive}{HTML}{737300}
+
+% Uncomment for navigation sidebar
+% \usetheme{Hannover}
+% \setbeamercolor{sidebar}{fg=black!70,bg=olive!50}
+% \setbeamercolor{title in sidebar}{fg=olive}
+% \setbeamercolor{author in sidebar}{fg=black!70}
+% \setbeamercolor{section in sidebar}{fg=black}
+% \setbeamercolor{subsection in sidebar}{fg=gray}
+
+% Footer. If using navigation sidebar, comment out this section 
+\setbeamertemplate{footline}
+{
+ \linethickness{0.05pt}\color{black!70}
+ \framelatex{
+  \begin{beamercolorbox}[leftskip=.3cm,sep=0.1cm]{Location bar}
+  \usebeamerfont{section in head/foot}
+  \insertshorttitle~|~\insertdate \hfill \insertemail
+  \hfill
+  \insertframenumber/\inserttotalframenumber
+  \end{beamercolorbox}}
+}
+
+% Color associations
+\setbeamercolor{background canvas}{bg=softwhite}
+\setbeamercolor{title}{fg=olive}
+\setbeamercolor{frametitle}{fg=olive}
+\setbeamercolor{part title}{fg=olive}
+\setbeamercolor{itemize item}{fg=black!70}
+\setbeamercolor{itemize subitem}{fg=black!70}
+\setbeamercolor{itemize subsubitem}{fg=black!70}
+\setbeamercolor{Location bar}{fg=black!70,bg=gray!20}
+\setbeamercolor{block title}{bg=olive!50, fg=white}
+\setbeamercolor{block body}{bg=olive!10}
+
+% Font styles
+\setbeamerfont{title}{size=\huge,series=\bfseries}
+\setbeamerfont{subtitle}{size=\Large}
+\setbeamerfont{author}{size=\normalsize,series=\bfseries}
+\setbeamerfont{institute}{size=\small}
+\setbeamerfont{date}{size=\small}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{section in head/foot}{size=\tiny,series=\normalfont}
+\setbeamerfont{itemize item}{size=\footnotesize}
+
+% Other elements
+\setbeamertemplate{itemize item}[triangle]
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{itemize subsubitem}[diamond]
+\setbeamertemplate{frametitle}{\vspace*{10mm}\insertframetitle}
+\setbeamertemplate{blocks}[rounded][shadow=true]

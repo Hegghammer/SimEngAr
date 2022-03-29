@@ -1,0 +1,1 @@
+# SimEngAr: A simple Beamer template for slides with English and Arabic

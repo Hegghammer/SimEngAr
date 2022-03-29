@@ -1,0 +1,111 @@
+---
+#=============================================
+# A sample Rmarkdown script for Beamer slides with 
+# English and Arabic text. To be used with 
+# accompanying beamerthemeSimEngAr.sty template. 
+# Requires some knowledge of LaTeX.
+#
+# Inspired by 
+# - http://svmiller.com/blog/2019/08/r-markdown-template-beamer-presentations/
+# - https://rasrita.wordpress.com/2017/11/02/rmarkdown-template-for-beamer-presentation/
+# .. and countless StackOverFlow and StackExchange posts. 
+#
+# Thomas Hegghammer, 29 March 2022
+#=============================================
+
+title: Simple English Arabic
+subtitle: A Minimal Rmarkdown Beamer Template
+author: Mark D. Beamerson
+institute: Rmarkdown University
+date: 29 March 2022
+fontsize: 10pt
+output:
+  beamer_presentation:
+    latex_engine: xelatex
+    theme: SimEngAr
+header-includes:
+  - \newcommand{\insertemail}{myemail@example.com} # your email here
+  - \titlegraphic{\includegraphics[width=1.5cm]{logo.png}} # comment out if no logo
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(echo = TRUE)
+```
+
+# Part 1
+
+## \hfill\textarab{الشريحة الأولى}
+
+\begin{flushright}
+\begin{arab}
+- النقطة الأولى
+\newline\newline\vspace{5mm}\hspace{-1.5mm}
+- النقطة الثانية
+\newline\vspace{5mm}\hspace{-1.5mm}
+- النقطة الثالثة
+\begin{block}{\textarab{كتلة}}
+\scriptsize{"طالب مجلس تحرير وول ستريت جورنال في افتتاحية الصحيفة أمس الاثنين بعدم ترك الرئيس جو بايدن يتحدث في القضايا شديدة الأهمية إلا إذا كان يقرأ نصا مكتوبا لا يخرج عنه، خاصة في أوقات الأزمات الدولية التي ترتبط بأسلحة الدمار الشامل بصورة أو بأخرى."}
+\newline\newline
+\bf\LR{Aljazeera.net, 29 March 2022}
+\end{block}
+\end{arab}
+\end{flushright}
+
+## Slide 2
+
+Some code with output:
+\newline
+
+```{r}
+print("Hello, world")
+```
+
+# \textarab{الجزء الثاني}
+
+## Some points
+
+- My first point
+
+    - Subpoint 1
+    
+    - Subpoint 2
+
+- My second point
+
+- My final point
+
+## Horsepower and miles per gallon
+
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
+library(ggplot2)
+ggplot(mtcars, aes(hp, mpg)) +
+  geom_point()
+```
+
+## A big picture
+
+```{r echo=FALSE, out.width="100%"}
+include_graphics("winter_sweden.jpg")
+```
+
+## A two-column slide
+
+\begin{columns}
+\column{0.4\textwidth}
+
+\begin{itemize}
+\item{Columns are nice}\newline
+\item{But they can get cramped}\newline
+\item\textarab{باللغة العربية أيضا}
+\end{itemize}
+
+\column{0.6\textwidth}
+
+\vspace{10mm}
+
+```{r echo=FALSE, out.width="100%"}
+include_graphics("winter_sweden.jpg")
+```
+
+\end{columns}
