@@ -11,6 +11,14 @@ simple Beamer/RMarkdown template is aimed to make that task a little easier.
 
 ![](./screenshots/two_column_slide.png)
 
+## Prerequisites
+
+- A working [Latex](https://www.latex-project.org/get/) installation
+- [R](https://www.r-project.org) and an R IDE such as [RStudio](https://www.rstudio.com)
+- An Arabic font such as [Scheherazade](https://fontlibrary.org/en/font/scheherazade), [Amiri](https://fontlibrary.org/en/font/amiri), or [Noto Sans Arabic]
+
+The code has been tested on Windows 10 and Ubuntu 20.04.
+
 ## Use
 
 1) Download `beamerthemeSimEngAr.sty` and `simple_english_arabic.Rmd` (or clone
